@@ -1,0 +1,36 @@
+{
+  "inbounds": [
+    {
+      "tag": "inbound-reality",
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "b97e8119-dda2-4a6c-a7d1-0ed88a935d94",
+            "flow": "xtls-rprx-vision",
+            "email": "user@example.com"
+          }
+        ],
+        "decryption": "none",
+        "fallbacks": []
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "publicKey": "put_your_public_key_here",
+          "shortId": "f533ceb7f1c1",
+          "serverName": "www.google.com",
+          "maxTimeDifference": 300
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
+}
