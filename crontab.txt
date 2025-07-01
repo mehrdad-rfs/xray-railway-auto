@@ -1,0 +1,2 @@
+30 23 * * * root supervisorctl stop xray
+30 4  * * * root supervisorctl start xray
