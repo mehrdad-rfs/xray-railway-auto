@@ -1,4 +1,2 @@
-
-30 23 * * * root supervisorctl stop xray
-30 4  * * * root supervisorctl start xray
-
+# Run Xray at reboot or scheduled times
+@reboot /start.sh
