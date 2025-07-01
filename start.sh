@@ -40,5 +40,8 @@ echo "PublicKey: $PUBLIC"
 echo "ShortID: $SHORT"
 echo "SNI: www.google.com"
 
+echo "Validating configuration..."
+/usr/local/bin/xray run -test -config /usr/local/etc/xray/config.json
+
 service cron start
 exec supervisord -n
