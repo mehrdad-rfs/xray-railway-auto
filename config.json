@@ -7,9 +7,9 @@
       "settings": {
         "clients": [
           {
-            "id": "b97e8119-dda2-4a6c-a7d1-0ed88a935d94",
+            "id": "d4f8e5c3-7a12-4f39-bc1a-2e0f8d5b0a11",
             "flow": "xtls-rprx-vision",
-            "email": "user@example.com"
+            "email": "testuser@example.com"
           }
         ],
         "decryption": "none",
@@ -19,8 +19,8 @@
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "publicKey": "put_your_public_key_here",
-          "shortId": "f533ceb7f1c1",
+          "publicKey": "f3a2b8c9d1e4f56789abcdef0123456789abcdef0123456789abcdef01234567",
+          "shortId": "a1b2c3d4e5f6",
           "serverName": "www.google.com",
           "maxTimeDifference": 300
         }
