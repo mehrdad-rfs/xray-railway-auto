@@ -11,7 +11,7 @@ PRIVATE=$(echo "$KEY_PAIR" | grep Private | awk '{print $2}')
 PUBLIC=$(echo "$KEY_PAIR" | grep Public | awk '{print $2}')
 SHORT=$(openssl rand -hex 6)
 
-# Create the Xray config file
+# Create config.json file
 cat > /usr/local/etc/xray/config.json <<EOF
 {
   "inbounds": [{
@@ -27,10 +27,10 @@ cat > /usr/local/etc/xray/config.json <<EOF
       "network": "tcp",
       "security": "reality",
       "realitySettings": {
-        "privateKey": "$PRIVATE",
-        "shortIds": ["$SHORT"],
+        "dest": "www.google.com:443",
         "serverName": "www.google.com",
-        "publicKey": "$PUBLIC"
+        "privateKey": "$PRIVATE",
+        "shortIds": ["$SHORT"]
       }
     }
   }],
@@ -41,14 +41,17 @@ cat > /usr/local/etc/xray/config.json <<EOF
 }
 EOF
 
-# Print connection details
+# Display connection details
+echo "=============================="
+echo "✅ Xray Reality Config Ready!"
 echo "UUID: $UUID"
 echo "PublicKey: $PUBLIC"
 echo "ShortID: $SHORT"
-echo "SNI: www.google.com"
+echo "SNI (serverName): www.google.com"
+echo "=============================="
 
-# Validate configuration
-echo "Validating configuration..."
+# Validate config before running
+echo "🔍 Validating configuration..."
 /usr/local/bin/xray run -test -config /usr/local/etc/xray/config.json
 
 # Start cron and supervisor
